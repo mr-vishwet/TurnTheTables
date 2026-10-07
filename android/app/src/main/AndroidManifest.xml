@@ -1,6 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Storage access for SQLite database scanning (scope §3.1) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29" />
+    <!-- "All files access" for Android 13+; granted from system settings -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" xmlns:tools="http://schemas.android.com/tools" />
 
     <application
       android:name=".MainApplication"
@@ -10,6 +15,7 @@
       android:allowBackup="false"
       android:theme="@style/AppTheme"
       android:usesCleartextTraffic="${usesCleartextTraffic}"
+      android:requestLegacyExternalStorage="true"
       android:supportsRtl="true">
       <activity
         android:name=".MainActivity"

@@ -195,7 +195,10 @@ Stored under `src/components/common/`:
 
 - Figma UI: initial flows for Scan, Apps List, DB Tree, Table View, Query Master, Settings.
 - Codebase: modular structure and scaffolding.
+- Updated 2026-10-07: scope implemented end-to-end (scan → browse → table data → query → settings),
+  state management finalized (zustand + AsyncStorage), real `sqliteService`/permissions/export
+  services wired into all screens. Development docs live in `.docs/`.
 - Next:
-  - Finalize state management choice.
-  - Implement real `sqliteService` and permission integration.
-  - Wire UI screens to real data and export functionality.
+  - On-device smoke test (rooted Android or emulator; see `.docs/status.md`).
+  - Make `main` the repo default branch; delete legacy `master`.
+  - Natural-language Query Master mode (still planned).
